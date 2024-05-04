@@ -29,5 +29,30 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  };
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s
+  }
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'THREED';
+    src: url('/fonts/3DPixel.ttf');
+  }
+  @font-face {
+    font-family: 'PIXELS';
+    src: url('/fonts/Pixels.ttf');
+  }
+  @font-face {
+    font-family: 'INVASION';
+    src: url('/fonts/Invasion.ttf');
   }
 }
