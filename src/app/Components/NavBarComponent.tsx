@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faSchool, faBriefcase, faLaptop, faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { MdWbSunny, MdDarkMode } from "react-icons/md";
 
 
 interface INavBarComponentProps {
@@ -17,15 +18,22 @@ const NavBarComponent = (props: INavBarComponentProps) => {
         { name: 'Contacto', to: '#', icon: faShareNodes, dis: 'translate-x-64' },
     ];
     const [active, setActive] = useState(0);
+    const [isDark, setIsDark] = useState(true);
+
+    const toggleIcon = () => {
+        setIsDark((prevState) => !prevState);
+    }
 
     return (
-        <nav className={`${props.className} bg-kang-ivory-900 flex items-center justify-center md:justify-between shadow relative rounded-xl`}>
+        <nav className={`${props.className} flex items-center justify-center md:justify-between relative rounded-xl`}>
+            {/* TITLE PAGE */}
             <div className="hidden md:flex mx-7">
-                <h4 className="text-kang-gray-900 text-4xl font-kang-3dpixels hover:font-bold">
-                    Kang<span className="text-kang-red-900">Dev</span>
+                <h4 className="text-white text-4xl font-kang-cracked hover:font-bold">
+                    KANG<span className="text-kang-red-900">DEV</span>
                 </h4>
             </div>
-            <div className='bg-kang-ivory-900 max-h-[4.4rem] px-3 sm:px-6 rounded-xl'>
+            {/* NAV LINKS */}
+            <div className='bg-white w-full md:w-fit flex justify-center max-h-[4.4rem] px-3 sm:px-6 rounded-xl'>
                 <ul className='flex relative'>
                     <span
                         className={`bg-kang-red-900 duration-500 ${navList[active].dis} border-4 border-kang-gray-900 h-16 w-16 absolute
@@ -43,7 +51,7 @@ const NavBarComponent = (props: INavBarComponentProps) => {
                     {navList.map((nav, i) => (
                         <li key={i} className='w-16'>
                             <a href="#" className='flex flex-col text-center pt-6' onClick={() => setActive(i)}>
-                                <span className={`text-xl cursor-pointer duration-500 ${i === active && "-mt-6 text-kang-ivory-900 z-10"}`}>
+                                <span className={`text-xl cursor-pointer duration-500 ${i === active && "-mt-6 text-white z-10"}`}>
                                     <FontAwesomeIcon icon={nav.icon} />
                                 </span>
                                 <span className={`${active == i
@@ -57,6 +65,12 @@ const NavBarComponent = (props: INavBarComponentProps) => {
                     ))}
                 </ul>
             </div>
+            {/* DARK/LIGHT-MODE */}
+                <button 
+                className='hidden md:flex justify-center items-center text-white text-4xl mx-7'
+                onClick={toggleIcon}>
+                {isDark ? <MdWbSunny /> : <MdDarkMode />}
+                </button>
         </nav>
     )
 }

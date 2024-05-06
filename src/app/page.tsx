@@ -7,8 +7,8 @@ export default function Page() {
     <main className={`
     w-full
     bg-kang-gray-900
-  
-
+    grid
+    grid-areas-layout
     overflow-x-hidden
     `}>
       <NavbarComponent className='grid-in-navbar fixed mt-9 m-2 z-10'  />

@@ -24,7 +24,7 @@ const config: Config = {
       },
       fontFamily: {
        'kang-pixels': ['PIXELS', 'sans-serif'],
-       'kang-3dpixels': ['THREED', 'sans-serif'],
+       'kang-cracked': ['CRACKED', 'sans-serif'],
        'kang-invasion': ['INVASION', 'sans-serif']
       },
       colors: {
@@ -55,6 +55,28 @@ const config: Config = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function({addUtilities}: any) { // se debería definir una interface pero sería un monstruo
+      const newUtilities = {
+        '.custom-button-hover': {
+          '&:hover': {
+            background: 'url(/images/pixel.png)',
+            'transition-delay': '0.8s',
+            'background-size': '180px',
+            animation: 'animate 0.8s steps(8) forwards',
+          },
+          '@keyframes animate': {
+            '0%': {
+              'background-position-y': '0',
+            },
+            '100%': {
+              'background-position-y': '-480px',
+            }
+          }
+        }
+      }
+      addUtilities(newUtilities, ['hover'])
+    }
+  ],
 };
 export default config;

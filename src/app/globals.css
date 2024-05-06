@@ -44,8 +44,8 @@ body {
 
 @layer base {
   @font-face {
-    font-family: 'THREED';
-    src: url('/fonts/3DPixel.ttf');
+    font-family: 'CRACKED';
+    src: url('/fonts/Cracked.ttf');
   }
   @font-face {
     font-family: 'PIXELS';

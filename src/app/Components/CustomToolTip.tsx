@@ -1,7 +1,6 @@
 import React from "react";
 import { ReactNode } from "react";
 
-
 interface IToolTip {
     position: string
     content: string

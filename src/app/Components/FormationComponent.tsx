@@ -46,7 +46,7 @@ const FormationComponent = (props: IFormationComponent) => {
       tecnicas para trabajar con almacenamiento local y obtener datos de APIs. Estas habilidades
       me permiten crear aplicaciones web interactivas y eficientes...
       `,
-      url: 'https://freecodecamp.org/certification/ALFONSO_JESUS_KAN_SILVEIRA/front-end-development-libraries'
+      url: 'https://freecodecamp.org/certification/ALFONSO_JESUS_KAN_SILVEIRA/javascript-algorithms-and-data-structures'
     },
     {
       key: 3,
@@ -64,13 +64,13 @@ const FormationComponent = (props: IFormationComponent) => {
       Tambien desarrolle aplicaciones como un carrito de compras usando React y Redux,
       explorando nuevas tecnicas para proyectos mas complejos.
       `,
-      url: 'https://freecodecamp.org/certification/ALFONSO_JESUS_KAN_SILVEIRA/javascript-algorithms-and-data-structures'
+      url: 'https://freecodecamp.org/certification/ALFONSO_JESUS_KAN_SILVEIRA/front-end-development-libraries'
     }
   ]
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
