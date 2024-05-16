@@ -6,11 +6,12 @@ import { FaFilePdf } from 'react-icons/fa6';
 
 interface INavBarComponentProps {
   className?: string
+  id?: string
 }
 
 const ProfileComponent = (props: INavBarComponentProps) => {
   return (
-    <div className='w-full h-screen flex flex-col justify-between'>
+    <div id='Profile' className={`${props.className} w-full h-screen flex flex-col justify-between`}>
       <div className='grid grid-cols-1 md:grid-cols-2 max-2-[1240] '>
         {/* SECCIÓN DEL MODELO 3D */}
         <div className='

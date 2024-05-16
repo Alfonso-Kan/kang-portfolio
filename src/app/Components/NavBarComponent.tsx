@@ -1,9 +1,8 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faSchool, faBriefcase, faLaptop, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { MdWbSunny, MdDarkMode } from "react-icons/md";
-
 
 interface INavBarComponentProps {
     className?: string
@@ -11,11 +10,11 @@ interface INavBarComponentProps {
 
 const NavBarComponent = (props: INavBarComponentProps) => {
     const navList = [
-        { name: 'Perfil', to: '#', icon: faUserAstronaut, dis: 'translate-x-0' },
-        { name: 'Formacion', to: '#', icon: faSchool, dis: 'translate-x-16' },
-        { name: 'Historial', to: '#', icon: faBriefcase, dis: 'translate-x-32' },
-        { name: 'Proyectos', to: '#', icon: faLaptop, dis: 'translate-x-48' },
-        { name: 'Contacto', to: '#', icon: faShareNodes, dis: 'translate-x-64' },
+        { name: 'Perfil', to: '#Profile', icon: faUserAstronaut, dis: 'translate-x-0' },
+        { name: 'Formacion', to: '#Formation', icon: faSchool, dis: 'translate-x-16' },
+        { name: 'Historial', to: '#History', icon: faBriefcase, dis: 'translate-x-32' },
+        { name: 'Proyectos', to: '#Proyects', icon: faLaptop, dis: 'translate-x-48' },
+        { name: 'Contacto', to: '#Contact', icon: faShareNodes, dis: 'translate-x-64' },
     ];
     const [active, setActive] = useState(0);
     const [isDark, setIsDark] = useState(true);
@@ -23,6 +22,16 @@ const NavBarComponent = (props: INavBarComponentProps) => {
     const toggleIcon = () => {
         setIsDark((prevState) => !prevState);
     }
+
+   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    event.preventDefault();
+    setTimeout(() => {
+        const section = document.querySelector(target);
+        if(section) {
+            section.scrollIntoView({ behavior: 'smooth'})
+        }
+    }, 650);
+   };
 
     return (
         <nav className={`${props.className} flex items-center justify-center md:justify-between relative rounded-xl`}>
@@ -50,7 +59,10 @@ const NavBarComponent = (props: INavBarComponentProps) => {
                     </span>
                     {navList.map((nav, i) => (
                         <li key={i} className='w-16'>
-                            <a href="#" className='flex flex-col text-center pt-6' onClick={() => setActive(i)}>
+                            <a
+                            href={nav.to}
+                            onClickCapture={(e) => handleClick(e, nav.to)}
+                            className='flex flex-col text-center pt-6' onClick={() => setActive(i)}>
                                 <span className={`text-xl cursor-pointer duration-500 ${i === active && "-mt-6 text-white z-10"}`}>
                                     <FontAwesomeIcon icon={nav.icon} />
                                 </span>

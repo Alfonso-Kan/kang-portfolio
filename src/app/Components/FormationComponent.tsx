@@ -80,7 +80,7 @@ const FormationComponent = (props: IFormationComponent) => {
   }
 
   return (
-    <section className={`${props.className} grid grid-cols-1 lg:grid-cols-2 min-h-screen z-10  items-center justify-center py-14 bg-kang-gray-900`}>
+    <section id='Formation' className={`${props.className} grid grid-cols-1 lg:grid-cols-2 min-h-screen z-10  items-center justify-center py-14 bg-kang-gray-900`}>
       <div className={`flex items-center justify-center w-full`}>
         <div className="w-3/4 lg:w-full ">
           <Slider {...settings}>

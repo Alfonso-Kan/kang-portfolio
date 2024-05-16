@@ -21,7 +21,7 @@ const FooterComponent  = (props: IFooterComponent) => {
 
     return (
         //section que este dividida en dos culumnas en pantallas menores en md y una en pantallas menores a md
-        <section className={`${props.className} flex flex-col md:flex-row items-center justify-center md:justify-between relative`}>
+        <section id="Contact" className={`${props.className} flex flex-col md:flex-row items-center justify-center md:justify-between relative`}>
             {/* Sección de las redes sociales */}
                 <div className="flex flex-col justify-center items-center my-4 w-full">
                     <h4 className="flex flex-row text-5xl text-white font-kang-cracked text-nowrap">KANG<p className="text-kang-red-900">DEV</p></h4>

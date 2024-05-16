@@ -1,5 +1,4 @@
 'use client'
-
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
@@ -16,6 +15,7 @@ function MeshComponent({ mousePosition }: { mousePosition: { x: number; y: numbe
     const { nodes, animations, scene } = useGLTF("/cube_robot.glb") as any;
     const { actions } = useAnimations(animations, scene) as any;
     const { camera } = useThree();
+    const windowWidth = window.innerWidth;
 
     const targetPosition = useRef({ x: 0, y: 0 });
 
@@ -25,8 +25,12 @@ function MeshComponent({ mousePosition }: { mousePosition: { x: number; y: numbe
 
     useFrame(() => {
         if (mesh.current) {
+            if (windowWidth < 640) {
+                camera.position.z = 4
+            } else {
+                camera.position.z = 3
+            }
             // Interpolate towards the target position for smooth movement
-            camera.position.z = 2;
             targetPosition.current.x += (mousePosition.x * 2 - targetPosition.current.x) * 0.05;
             targetPosition.current.y += (mousePosition.y * 2 - targetPosition.current.y) * 0.05;
             mesh.current.position.x = targetPosition.current.x;

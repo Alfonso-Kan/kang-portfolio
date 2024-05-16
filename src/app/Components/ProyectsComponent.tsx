@@ -8,6 +8,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface IProyects {
     className?: string;
+    id?: string;
 }
 
 const ProyectsComponent = (props: IProyects) => {
@@ -104,7 +105,7 @@ const ProyectsComponent = (props: IProyects) => {
 
 
     return (
-        <div className="flex justify-center items-center flex-wrap gap-y-16 gap-x-12 retalive py-[100px] px-4">
+        <div id="Proyects" className="flex justify-center items-center flex-wrap gap-y-16 gap-x-12 retalive py-[100px] px-4">
             {ProyectList.map((item, index) => (
                 <div key={item.key} className={`
                 flex relative justify-center items-start

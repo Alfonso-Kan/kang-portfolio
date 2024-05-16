@@ -4,10 +4,10 @@ import { ToolTip } from "./CustomToolTip";
 import { SiTypescript, SiTailwindcss, SiJavascript, SiNodedotjs } from "react-icons/si"
 import { FaReact, FaVuejs } from "react-icons/fa6"
 import { TbBrandNextjs } from "react-icons/tb";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 interface IHistoryComponent {
   className?: string
+  id?: string
 }
 
 const HistoryComponent = (props: IHistoryComponent) => {
@@ -24,9 +24,9 @@ const HistoryComponent = (props: IHistoryComponent) => {
 
 
   return  ( 
-    <section className={`${props.className} relative  grid grid-cols-1 md:grid-cols-2 h-screen w-full my-5 items-center justify-center overflow-hidden`}>
+    <section id="History" className={`${props.className} relative  grid grid-cols-1 md:grid-cols-2 h-screen w-full my-5 items-center justify-center overflow-hidden`}>
       {/*Seccion del drone */}
-      <div className="absolute  h-screen w-full my-[5]">
+      <div className="absolute top-36 mt  h-screen w-full">
         <Drone />
       </div>
       <div className="flex flex-col p-3 bg-kang-gray-900 bg-transparent items-center">
