@@ -5,7 +5,7 @@ import { Mesh } from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
 function MeshComponent() {
-    const fileUrl = '/model/scene.gltf';
+    const fileUrl = '/model/developerModel/developer.gltf';
     const mesh = useRef<Mesh>(null!);
     const gltf = useLoader(GLTFLoader, fileUrl);
     const { camera } = useThree();
@@ -38,4 +38,3 @@ export const Developer = () => {
         </Canvas>
     )
 }
-

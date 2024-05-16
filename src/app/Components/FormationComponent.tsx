@@ -86,7 +86,6 @@ const FormationComponent = (props: IFormationComponent) => {
           <Slider {...settings}>
             {FormationList.map(form => (
               <div key={form.key} className='w-9 flex items-center justify-center'>
-
                 <img src={form.img} alt={form.title} />
               </div>
             ))}
@@ -104,7 +103,7 @@ const FormationComponent = (props: IFormationComponent) => {
               {/* tecos de las tecnologías */}
               <div className='flex flex-row py-2 text-white text-3xl justify-start'>{form.tech.map(tech => (
                 <p className='hover:text-blue-600 p-0 border-none my-5 mx-2 sm:mx-4'>
-                  <ToolTip content={tech.name} position={tech.position}>
+                  <ToolTip color='blue' content={tech.name} position={tech.position}>
                     {tech.icon}
                   </ToolTip>
                 </p>

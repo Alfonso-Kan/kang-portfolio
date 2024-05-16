@@ -15,6 +15,9 @@ const config: Config = {
           `navbar navbar navbar`,
           `profile profile profile`,
           `formation formation formation`,
+          `history history history`,
+          `proyect proyect proyect`,
+          `footer footer footer`
         ]
       },
       backgroundImage: {
@@ -28,6 +31,10 @@ const config: Config = {
        'kang-invasion': ['INVASION', 'sans-serif']
       },
       colors: {
+        'kang-github': '#000000',
+        'kang-linkedin': '#0077B5',
+        'kang-gmail': '#DB4437',
+        'kang-whatsapp': '#25D366',
         'kang-gray': {
           300: '#d0d0d0',
           900: '#231f20'
@@ -73,6 +80,13 @@ const config: Config = {
               'background-position-y': '-480px',
             }
           }
+        },
+        '.group-hover:translate-y-[100px]': { //aqui
+          transform: 'translateY(-100px)',
+          transitionDelay: '0.5s'
+        },
+        '.group-hover:translate-y-[165px]': {//aqui
+          transform: 'translate/(-165px)'
         }
       }
       addUtilities(newUtilities, ['hover'])

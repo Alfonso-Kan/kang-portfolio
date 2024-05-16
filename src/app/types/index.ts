@@ -1,0 +1,1 @@
+export type TDirection = 'top' | 'bottom';

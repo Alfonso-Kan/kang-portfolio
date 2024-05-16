@@ -2,7 +2,7 @@
 import image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import { Developer } from './CustomDeveloper';
-import { FaFilePdf } from "react-icons/fa6";
+import { FaFilePdf } from 'react-icons/fa6';
 
 interface INavBarComponentProps {
   className?: string
@@ -31,7 +31,7 @@ const ProfileComponent = (props: INavBarComponentProps) => {
                 4000, // wait 1s before replacing "Mice" with "Hamsters"
                 'soy Desarrollador Frontend...',
                 4000,
-                'soy Desarrollador Backend...',
+                'soy Estudiante Backend...',
                 4000,
                 'soy Estudiante Autodidacta...',
                 4000
@@ -43,16 +43,18 @@ const ProfileComponent = (props: INavBarComponentProps) => {
             />
           </div>
 
-          <button className='
+          <a className='
           flex flex-row
           font-kang-pixels text-white
           items-center justify-center
           text-4xl text-nowrap
           py-2 px-6
-          sm:w-[60%] my-4
+          md:w-[60%] my-4
           custom-button-hover
-          rounded-2xl'>Curriculum vitae <FaFilePdf className='text-3xl ml-2' />
-          </button>
+          rounded-2xl cursor-pointer'
+          href='/Mi_CV.pdf'
+          download="Mi_CV.pdf">Curriculum vitae <FaFilePdf className='text-3xl ml-2' />
+          </a>
         </div>
       </div>
     </div>
