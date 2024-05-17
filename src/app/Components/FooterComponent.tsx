@@ -30,7 +30,7 @@ const FooterComponent  = (props: IFooterComponent) => {
                 {/* aqui va el enlace entre las redes sociales */}
                 <div className="flex flex-row justify-center items-center my-4 gap-x-4 bg-transparent w-full">
                     {socialMedia.map(social => (
-                    <FooterButtons href={social.link} text={social.name} color={social.color} className="text-nowrap cursor-default">
+                    <FooterButtons key={social.key} href={social.link} text={social.name} color={social.color} className="text-nowrap cursor-default">
                         {social.icon}
                     </FooterButtons>
                     ))}

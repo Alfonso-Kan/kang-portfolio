@@ -102,11 +102,11 @@ const FormationComponent = (props: IFormationComponent) => {
               <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-400 font-kang-invasion">{form.title}</h5>
               {/* tecos de las tecnologías */}
               <div className='flex flex-row py-2 text-white text-3xl justify-start'>{form.tech.map(tech => (
-                <p className='hover:text-blue-600 p-0 border-none my-5 mx-2 sm:mx-4'>
+                <div className='hover:text-blue-600 p-0 border-none my-5 mx-2 sm:mx-4'>
                   <ToolTip color='blue' content={tech.name} position={tech.position}>
                     {tech.icon}
                   </ToolTip>
-                </p>
+                </div>
               ))}</div>
               <p className="mb-3 font-normal text-white text-3xl sm:text-4xl font-kang-pixels leading-7">{form.description}</p>
               <a href={form.url} target='_blank' className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
