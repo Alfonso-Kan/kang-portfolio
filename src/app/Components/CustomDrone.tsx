@@ -58,7 +58,7 @@ export const Drone = () => {
         <Canvas
             gl={{ antialias: true }}
             dpr={[1, 1.5]}
-            onMouseMove={handleMouseMove}> //aqui
+            onMouseMove={handleMouseMove}>
             <directionalLight position={[-5, -5, 5]} intensity={4} />
             <Suspense fallback={null}>
                 <MeshComponent mousePosition={mousePosition} />
