@@ -1,18 +1,14 @@
 'use client'
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Group } from "three";
 
 useGLTF.preload("/cube_robot.glb");
 
-interface IDrone {
-    className?: string;
-}
-
 function MeshComponent({ mousePosition }: { mousePosition: { x: number; y: number } }) {
     const mesh = useRef<Group>(null);
-    const { nodes, animations, scene } = useGLTF("/cube_robot.glb") as any;
+    const { animations, scene } = useGLTF("/cube_robot.glb") as any;
     const { actions } = useAnimations(animations, scene) as any;
     const { camera } = useThree();
     const windowWidth = window.innerWidth;
@@ -21,7 +17,7 @@ function MeshComponent({ mousePosition }: { mousePosition: { x: number; y: numbe
 
     useEffect(() => {
         actions["Fly"].play();
-    });
+    }, [actions]);
 
     useFrame(() => {
         if (mesh.current) {
@@ -45,24 +41,24 @@ function MeshComponent({ mousePosition }: { mousePosition: { x: number; y: numbe
     );
 }
 
-export const Drone = (props: IDrone) => {
+export const Drone = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    const handleMouseMove = (event: MouseEvent) => {
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         const rect = event.currentTarget.getBoundingClientRect();
         setMousePosition({
             x: ((event.clientX - rect.left) / rect.width) * 2 - 1,
             y: -((event.clientY - rect.top) / rect.height) * 2 + 1,
         });
     };
+    
 
     return (
+        
         <Canvas
             gl={{ antialias: true }}
             dpr={[1, 1.5]}
-            onMouseMove={handleMouseMove}
-            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-        >
+            onMouseMove={handleMouseMove}> //aqui
             <directionalLight position={[-5, -5, 5]} intensity={4} />
             <Suspense fallback={null}>
                 <MeshComponent mousePosition={mousePosition} />
