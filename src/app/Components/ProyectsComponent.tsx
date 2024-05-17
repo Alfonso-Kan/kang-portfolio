@@ -21,7 +21,13 @@ const ProyectsComponent = (props: IProyects) => {
             description: `
             Mi primer trabajo real! Talent-24 Especializado en reclutamiento en tecnologia, industria, atencion al
             cliente y ventas.`,
-            tecnologies: [<TbBrandNextjs />, <FaReact />, <SiTypescript />, <SiTailwindcss />, <SiHtml5 />],
+            tecnologies: [
+            {key: 1, icon: <TbBrandNextjs />},
+            {key: 2, icon: <FaReact />},
+            {key: 3, icon: <SiTypescript />},
+            {key: 4, icon: <SiTailwindcss />},
+            {key: 5, icon: <SiHtml5 />}
+        ],
             url: 'https://talento24.com/'
         },
         {
@@ -31,7 +37,12 @@ const ProyectsComponent = (props: IProyects) => {
             description: `
             Proyecto personal desarrollado con Vite para el certificado de Frontend Development Libraries de
             FreeCodeCamp. Gestor de estudio.`,
-            tecnologies: [<SiTypescript />, <SiJavascript />, <SiHtml5 />, <FaCss3 />],
+            tecnologies: [
+            {key: 1, icon: <SiTypescript />},
+            {key: 2, icon: <SiJavascript />},
+            {key: 3, icon: <SiHtml5 />},
+            {key: 4, icon: <FaCss3 />}
+     ],
             url: 'https://kang-25-5-clock.netlify.app/'
         },
         {
@@ -42,7 +53,12 @@ const ProyectsComponent = (props: IProyects) => {
             Desarrollada con Vite para el certificado en Frontend Development Libraries
             de FreeCodeCamp. Genera tu propia musica.
             `,
-            tecnologies: [<SiTypescript />, <SiJavascript />, <SiHtml5 />, <FaCss3 />],
+            tecnologies: [
+            {key: 1, icon: <SiTypescript />},
+            {key: 2, icon: <SiJavascript />},
+            {key: 3, icon: <SiHtml5 />},
+            {key: 4, icon: <FaCss3 />}
+        ],
             url: 'https://fcc-drum-machine-alfonso-kang.netlify.app/'
         },
         {
@@ -52,7 +68,11 @@ const ProyectsComponent = (props: IProyects) => {
             description: `
             Desarrollado con Vite. Certificacion en Frontend Development de FreeCodeCamp. Crea citas aleatorias y compartelas en Twitter.
             `,
-            tecnologies: [<SiJavascript />, <SiHtml5 />, <FaCss3 />],
+            tecnologies: [
+            {key: 1, icon: <SiJavascript />},
+            {key: 1, icon: <SiHtml5 />},
+            {key: 1, icon: <FaCss3 />}
+        ],
             url: 'https://loquacious-cactus-70397f.netlify.app/'
         },
         {
@@ -63,7 +83,12 @@ const ProyectsComponent = (props: IProyects) => {
             Para el certificado en Frontend Development Libraries de
             FreeCodeCamp. Permite visualizar y editar texto en Markdown.
             `,
-            tecnologies: [<SiTypescript />, <SiJavascript />, <SiHtml5 />, <FaCss3 />],
+            tecnologies: [
+            {key: 1, icon: <SiTypescript />},
+            {key: 2, icon: <SiJavascript />},
+            {key: 3, icon: <SiHtml5 />},
+            {key: 4, icon: <FaCss3 />}
+            ],
             url: 'https://aks-markdown-previewer.netlify.app/'
         },
         {
@@ -73,7 +98,12 @@ const ProyectsComponent = (props: IProyects) => {
             description: `
             Desarrollada con Vite para el certificado en Frontend Development Libraries de FreeCodeCamp. Inspirado en la
             funcionalidad de iOS.`,
-            tecnologies: [<SiTypescript />, <SiJavascript />, <SiHtml5 />, <FaCss3 />],
+            tecnologies: [
+            {key: 1, icon: <SiTypescript />},
+            {key: 2, icon: <SiJavascript />},
+            {key: 3, icon: <SiHtml5 />},
+            {key: 4, icon: <FaCss3 />}
+            ],
             url: 'https://calm-pie-a578a0.netlify.app/'
         },
         {
@@ -84,7 +114,11 @@ const ProyectsComponent = (props: IProyects) => {
             Proyecto personal responsivo. Utiliza Vanilla JS para comprender la logica de
             manipulacion del DOM
             `,
-            tecnologies: [<SiJavascript />, <SiHtml5 />],
+            tecnologies: [
+            {key: 1, icon: <SiJavascript />},
+            {key: 2, icon: <SiHtml5 />}
+        
+        ],
             url: 'https://shoping-cart-alfonso.netlify.app/'
         },
         {
@@ -93,7 +127,10 @@ const ProyectsComponent = (props: IProyects) => {
             name: 'responsive-page',
             description: `Mi Primera Web Responsiva para la certificacion en
             Responsive Web Design de FreeCodeCamp.`,
-            tecnologies: [<SiHtml5 />, <FaCss3 />],
+            tecnologies: [
+            {key: 1, icon: <SiHtml5 />},
+            {key: 2, icon: <FaCss3 />}
+        ],
             url: 'https://responsive-page-alfonso.netlify.app/'
         },
     ]
@@ -133,10 +170,9 @@ const ProyectsComponent = (props: IProyects) => {
                             <h1 className=" font-kang-invasion text-blue-600 text-2xl mb-4 text-nowrap">{item.name}</h1>
                             <p className=" font-kang-pixels text-2xl text-white">{item.description}</p>
                             <div className="flex text-white text-xl flex-row overflow-hidden gap-x-5 py-2 my-2">
-                                {item.tecnologies.map((tech, index) => (
-                                    <div key={index}>{tech}</div>
+                                {item.tecnologies.map(tech => (
+                                    <div key={tech.key}>{tech.icon}</div>
                                 ))}
-
                             </div>
                             <a href={item.url} target="_blank" className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
                                 <p className=' font-kang-invasion text-md mr-2'>Ver mas</p> <FaExternalLinkAlt />
