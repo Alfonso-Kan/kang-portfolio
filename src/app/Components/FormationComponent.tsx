@@ -53,10 +53,10 @@ const FormationComponent = (props: IFormationComponent) => {
       title: 'Front End Development Libraries Certification',
       img: '/images/third-certification.png',
       tech: [
-        { icon: <FaBootstrap />, name: 'Bootstrap', position: 'bottom' },
-        { icon: <FaSass />, name: 'Sass', position: 'top' },
-        { icon: <FaReact />, name: 'React', position: 'bottom' },
-        { icon: <SiRedux />, name: 'Redux', position: 'top' }
+        {icon: <FaBootstrap />, name: 'Bootstrap', position: 'bottom' },
+        {icon: <FaSass />, name: 'Sass', position: 'top' },
+        {icon: <FaReact />, name: 'React', position: 'bottom' },
+        {icon: <SiRedux />, name: 'Redux', position: 'top' }
       ],
       description: `
       Amplie mis habilidades al aprender las bibliotecas mas populares del sector, como
@@ -101,8 +101,8 @@ const FormationComponent = (props: IFormationComponent) => {
             <div className="w-3/4 p-6 bg-kang-gray-900 border-none rounded-lg">
               <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-400 font-kang-invasion">{form.title}</h5>
               {/* tecos de las tecnologías */}
-              <div className='flex flex-row py-2 text-white text-3xl justify-start'>{form.tech.map(tech => (
-                <div className='hover:text-blue-600 p-0 border-none my-5 mx-2 sm:mx-4'>
+              <div className='flex flex-row py-2 text-white text-3xl justify-start'>{form.tech.map((tech, index) => (
+                <div key={index} className='hover:text-blue-600 p-0 border-none my-5 mx-2 sm:mx-4'>
                   <ToolTip color='blue' content={tech.name} position={tech.position}>
                     {tech.icon}
                   </ToolTip>

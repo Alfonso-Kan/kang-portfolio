@@ -49,9 +49,9 @@ const HistoryComponent = (props: IHistoryComponent) => {
         </p>
         {/* Tecnologías  */}
         <div className="flex flex-row justify-start items-center gap-x-2 lg:gap-x-8 tex-xl sm:text-3xl py-12">
-         {techList.map(tech => (
-          <div className="text-white hover:text-kang-red-900">
-            <ToolTip key={tech.key} color='red' content={tech.name} position={tech.position}>
+         {techList.map(tech=> (
+          <div key={tech.key} className="text-white hover:text-kang-red-900">
+            <ToolTip color='red' content={tech.name} position={tech.position}>
             {tech.icon}
             </ToolTip>
           </div>

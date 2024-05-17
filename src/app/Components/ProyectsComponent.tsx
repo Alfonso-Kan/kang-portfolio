@@ -5,6 +5,7 @@ import { FaReact, FaCss3 } from "react-icons/fa6";
 import { TbBrandNextjs } from "react-icons/tb";
 import { SiTypescript, SiTailwindcss, SiHtml5, SiJavascript } from "react-icons/si";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 interface IProyects {
     className?: string;
@@ -132,7 +133,10 @@ const ProyectsComponent = (props: IProyects) => {
                             <h1 className=" font-kang-invasion text-blue-600 text-2xl mb-4 text-nowrap">{item.name}</h1>
                             <p className=" font-kang-pixels text-2xl text-white">{item.description}</p>
                             <div className="flex text-white text-xl flex-row overflow-hidden gap-x-5 py-2 my-2">
-                                {item.tecnologies}
+                                {item.tecnologies.map((tech, index) => (
+                                    <div key={index}>{tech}</div>
+                                ))}
+
                             </div>
                             <a href={item.url} target="_blank" className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
                                 <p className=' font-kang-invasion text-md mr-2'>Ver mas</p> <FaExternalLinkAlt />
