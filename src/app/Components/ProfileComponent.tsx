@@ -11,7 +11,7 @@ interface INavBarComponentProps {
 
 const ProfileComponent = (props: INavBarComponentProps) => {
   return (
-    <div id='Profile' className={`${props.className} w-full h-screen flex flex-col justify-between`}>
+    <div id='Profile' className={`${props.className} w-full h-screen flex flex-col justify-center`}>
       <div className='grid grid-cols-1 md:grid-cols-2 max-2-[1240] '>
         {/* SECCIÓN DEL MODELO 3D */}
         <div className='
@@ -21,7 +21,7 @@ const ProfileComponent = (props: INavBarComponentProps) => {
           <Developer />
         </div>
         {/* SECCIÓN DE LOS TITULOS */}
-        <div className='flex flex-col justify-center md:items-start w-full px-2 py-8'>
+        <div className='flex flex-col justify-center md:items-start w-full px-2'>
           <p className='text-6xl font-kang-pixels text-white'> Hola, mi nombre es: </p>
           <h1 className='font-kang-cracked text-kang-red-900 py-5 text-3xl md:text-4xl lg:text-5xl whitespace-nowrap'>ALFONSO KANG</h1>
           <div className='text-xl sm:text-2xl text-white font-kang-pixels  py-1xl'>
