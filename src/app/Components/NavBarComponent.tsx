@@ -63,12 +63,12 @@ const NavBarComponent = (props: INavBarComponentProps) => {
                             href={nav.to}
                             onClickCapture={(e) => handleClick(e, nav.to)}
                             className='flex flex-col text-center pt-6' onClick={() => setActive(i)}>
-                                <span className={`text-xl cursor-pointer duration-500 ${i === active && "-mt-6 text-white z-10"}`}>
+                                <span className={`text-xl cursor-pointer duration-500 text-kang-gray-900 ${i === active && "-mt-6 text-white z-10"}`}>
                                     <FontAwesomeIcon icon={nav.icon} />
                                 </span>
                                 <span className={`${active == i
                                     ?
-                                    "translate-y-2 duration-700 opacity-100 text-3xl font-kang-pixels"
+                                    "translate-y-2 duration-700 opacity-100 text-3xl font-kang-pixels text-kang-gray-900"
                                     : "opacity-0 translate-y-10 text-3xl font-kang-pixels"}`}>
                                     {nav.name}
                                 </span>
