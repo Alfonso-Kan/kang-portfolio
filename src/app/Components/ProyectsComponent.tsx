@@ -141,9 +141,16 @@ const ProyectsComponent = (props: IProyects) => {
       setClickedIndex(index === clickedIndex ? null : index);
     };
 
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.stopPropagation();
+    };
+
 
     return (
-        <div id="Proyects" className="flex justify-center items-center flex-wrap gap-y-16 gap-x-12 retalive py-[100px] px-4">
+        <div id="Proyects" className="
+        flex
+        justify-center items-center
+        flex-wrap gap-y-16 gap-x-12 retalive py-[100px] px-4">
             {ProyectList.map((item, index) => (
                 <div key={item.key} className={`
                 flex relative justify-center items-start
@@ -174,7 +181,11 @@ const ProyectsComponent = (props: IProyects) => {
                                     <div key={tech.key}>{tech.icon}</div>
                                 ))}
                             </div>
-                            <a href={item.url} target="_blank" className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
+                            <a
+                            href={item.url}
+                            target="_blank"
+                            onClick={handleLinkClick}
+                            className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
                                 <p className=' font-kang-invasion text-md mr-2'>Ver mas</p> <FaExternalLinkAlt />
                             </a>
                         </div>

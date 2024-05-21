@@ -16,7 +16,7 @@ export const Arrow = (props: ICustomArrowsProps) => (
               top-[-55px]
               text-5xl 
               text-white
-              hover:text-blue-400
+              hover:text-blue-600
               border-none
               cursor-pointer
               ${props.direction === 'left' ? 'left-[10px]' : 'left-[60px] rotate-180'}

@@ -14,7 +14,7 @@ const FooterComponent  = (props: IFooterComponent) => {
       
     const socialMedia = [
         {key: 1, icon: <FaGithub />, name: 'github/Alfonso-Kan', color: 'bg-kang-github', link:  'https://github.com/Alfonso-Kan' },
-        {key: 2, icon: <FaLinkedin />, name: 'Linkedin/Alfonso-Kang-Silveira', color: 'bg-kang-linkedin', link: 'https://www.linkedin.com/in/alfonso-kang-silveira-9b3050210/' },
+        {key: 2, icon: <FaLinkedin />, name: 'Linkedin/Alfonso-Kang', color: 'bg-kang-linkedin', link: 'https://www.linkedin.com/in/alfonso-kang-silveira-9b3050210/' },
         {key: 3, icon: <SiGmail />, name: 'Alf.KS7791@gmail.com' , color: 'bg-kang-gmail', link: 'mailto:Alf.KS7791@gmail.com?subject=Asunto del correo&body=Hola%20Alfonso,%20nos%20encantaría%20trabajar%20contigo...' },
         {key: 4, icon: <FaWhatsapp />, name: '999-94-11-26-71' , color: 'bg-kang-whatsapp', link: 'https://wa.me/529994112671?text=Hola%20Alfonso,%20nos%20encantaria%20trabajar%20contigo...' }
     ]
@@ -28,7 +28,11 @@ const FooterComponent  = (props: IFooterComponent) => {
                     <p className="text-2xl font-kang-pixels text-white">Visita alguna de mis redes sociales...</p>
                 </div>
                 {/* aqui va el enlace entre las redes sociales */}
-                <div className="flex flex-row justify-center items-center my-4 gap-x-4 bg-transparent w-full">
+                <div className="
+                flex flex-row
+                justify-center items-center
+                my-4 gap-x-4 w-full
+                bg-transparent ">
                     {socialMedia.map(social => (
                     <FooterButtons key={social.key} href={social.link} text={social.name} color={social.color} className="text-nowrap cursor-default">
                         {social.icon}

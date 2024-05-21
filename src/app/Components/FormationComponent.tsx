@@ -80,7 +80,14 @@ const FormationComponent = (props: IFormationComponent) => {
   }
 
   return (
-    <section id='Formation' className={`${props.className} grid grid-cols-1 lg:grid-cols-2 min-h-screen z-10  items-center justify-center py-14 bg-kang-gray-900`}>
+    <section
+    id='Formation'
+    className={`${props.className}
+    grid grid-cols-1 lg:grid-cols-2
+    min-h-screen 
+    items-center justify-center
+    py-14 z-10 
+    bg-kang-gray-900`}>
       <div className={`flex items-center justify-center w-full`}>
         <div className="w-3/4 lg:w-full ">
           <Slider {...settings}>
@@ -108,7 +115,7 @@ const FormationComponent = (props: IFormationComponent) => {
                   </ToolTip>
                 </div>
               ))}</div>
-              <p className="mb-3 font-normal text-white text-3xl sm:text-4xl font-kang-pixels leading-7">{form.description}</p>
+              <p className="mb-3 font-normal text-white text-2xl md:text-4xl font-kang-pixels leading-7">{form.description}</p>
               <a href={form.url} target='_blank' className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
                 <p className=' font-kang-invasion text-xl mr-2'>Ver mas</p> <FaExternalLinkAlt />
               </a>

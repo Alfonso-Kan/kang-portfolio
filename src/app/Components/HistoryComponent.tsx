@@ -24,7 +24,7 @@ const HistoryComponent = (props: IHistoryComponent) => {
 
 
   return  ( 
-    <section id="History" className={`${props.className} relative  grid grid-cols-1 md:grid-cols-2 h-screen w-full my-5 items-center justify-center overflow-hidden`}>
+    <section id="History" className={`${props.className} relative h-screen  grid grid-cols-1 md:grid-cols-2 w-full my-5 items-center justify-center overflow-hidden`}>
       {/*Seccion del drone */}
       <div className="absolute top-36 mt  h-screen w-full">
         <Drone />
