@@ -24,8 +24,8 @@ const FooterComponent  = (props: IFooterComponent) => {
         <section id="Contact" className={`${props.className} flex flex-col md:flex-row items-center justify-center md:justify-between relative`}>
             {/* Sección de las redes sociales */}
                 <div className="flex flex-col justify-center items-center my-4 w-full">
-                    <h4 className="flex flex-row text-5xl text-white font-kang-cracked text-nowrap">KANG<p className="text-kang-red-900">DEV</p></h4>
-                    <p className="text-2xl font-kang-pixels text-white">Visita alguna de mis redes sociales...</p>
+                    <h4 className="flex flex-row text-5xl dark:text-white text-kang-gray font-kang-cracked text-nowrap">KANG<p className="text-kang-red-900">DEV</p></h4>
+                    <p className="text-2xl font-kang-pixels dark:text-white text-kang-gray">Visita alguna de mis redes sociales...</p>
                 </div>
                 {/* aqui va el enlace entre las redes sociales */}
                 <div className="

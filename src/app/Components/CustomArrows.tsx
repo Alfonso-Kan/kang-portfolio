@@ -15,7 +15,7 @@ export const Arrow = (props: ICustomArrowsProps) => (
               z-10 
               top-[-55px]
               text-5xl 
-              text-white
+              dark:text-white text-kang-gray
               hover:text-blue-600
               border-none
               cursor-pointer

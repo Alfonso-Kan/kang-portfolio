@@ -9,7 +9,8 @@ export default function Page() {
   return (
     <main className={`
     w-full
-    bg-kang-gray-900
+    dark:bg-kang-gray
+    bg-kang-white
     grid
     grid-areas-layout
     overflow-x-hidden

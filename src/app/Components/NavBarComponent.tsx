@@ -1,8 +1,8 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
+import DarkMode from './CustomDarkMode';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut, faSchool, faBriefcase, faLaptop, faShareNodes } from '@fortawesome/free-solid-svg-icons';
-import { MdWbSunny, MdDarkMode } from "react-icons/md";
 
 interface INavBarComponentProps {
     className?: string
@@ -37,24 +37,24 @@ const NavBarComponent = (props: INavBarComponentProps) => {
         <nav className={`${props.className} flex items-center justify-center md:justify-between relative rounded-xl`}>
             {/* TITLE PAGE */}
             <div className="hidden md:flex mx-7">
-                <h4 className="text-white text-4xl font-kang-cracked hover:font-bold">
+                <h4 className="dark:text-white text-kang-gray  text-4xl font-kang-cracked hover:font-bold">
                     KANG<span className="text-kang-red-900">DEV</span>
                 </h4>
             </div>
             {/* NAV LINKS */}
-            <div className='bg-white w-full md:w-fit flex justify-center max-h-[4.4rem] px-3 sm:px-6 rounded-xl'>
+            <div className='dark:bg-white bg-kang-gray w-full md:w-fit flex justify-center max-h-[4.4rem] px-3 sm:px-6 rounded-xl'>
                 <ul className='flex relative'>
                     <span
-                        className={`bg-kang-red-900 duration-500 ${navList[active].dis} border-4 border-kang-gray-900 h-16 w-16 absolute
+                        className={`bg-kang-red-900 duration-500 ${navList[active].dis} border-4 dark:border-kang-gray border-kang-white h-16 w-16 absolute
                 -top-5 rounded-full`}
                     >
                         <span
                             className="w-3.5 h-3.5 bg-transparent absolute top-4 -left-[18px] 
-                    rounded-tr-[11px] shadow-myShadow1"
+                    rounded-tr-[11px] dark:shadow-darkMyShadow1 shadow-myShadow1"
                         ></span>
                         <span
                             className="w-3.5 h-3.5 bg-transparent absolute top-4 -right-[18px] 
-                    rounded-tl-[11px] shadow-myShadow2"
+                    rounded-tl-[11px] dark:shadow-darkMyShadow2 shadow-myShadow2"
                         ></span>
                     </span>
                     {navList.map((nav, i) => (
@@ -63,12 +63,12 @@ const NavBarComponent = (props: INavBarComponentProps) => {
                             href={nav.to}
                             onClickCapture={(e) => handleClick(e, nav.to)}
                             className='flex flex-col text-center pt-6' onClick={() => setActive(i)}>
-                                <span className={`text-xl cursor-pointer duration-500 text-kang-gray-900 ${i === active && "-mt-6 text-white z-10"}`}>
+                                <span className={`text-xl cursor-pointer duration-500 dark:text-kang-gray text-white ${i === active && "-mt-6 dark:text-white z-10" }`}>
                                     <FontAwesomeIcon icon={nav.icon} />
                                 </span>
                                 <span className={`${active == i
                                     ?
-                                    "translate-y-2 duration-700 opacity-100 text-3xl font-kang-pixels text-kang-gray-900"
+                                    "translate-y-2 duration-700 opacity-100 text-3xl font-kang-pixels dark:text-kang-gray text-white"
                                     : "opacity-0 translate-y-10 text-3xl font-kang-pixels"}`}>
                                     {nav.name}
                                 </span>
@@ -78,11 +78,7 @@ const NavBarComponent = (props: INavBarComponentProps) => {
                 </ul>
             </div>
             {/* DARK/LIGHT-MODE */}
-                <button 
-                className='hidden md:flex justify-center items-center text-white text-4xl mx-7'
-                onClick={toggleIcon}>
-                {isDark ? <MdWbSunny /> : <MdDarkMode />}
-                </button>
+                <DarkMode />
         </nav>
     )
 }

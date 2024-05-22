@@ -154,14 +154,14 @@ const ProyectsComponent = (props: IProyects) => {
             {ProyectList.map((item, index) => (
                 <div key={item.key} className={`
                 flex relative justify-center items-start
-                bg-kang-gray-300 bg-opacity-15 shadow-md 
+                dark:bg-kang-white bg-kang-gray dark:bg-opacity-40 bg-opacity-15 shadow-md 
                 w-full sm:w-[350px] h-[350px] rounded-lg
                 group cursor-pointer transition
                 ${clickedIndex === index ? 'h-[400px]' : ''}`} onClick={() => handleClick(index)}>
                     <div className={`
                     absolute
                     w-[300px] h-[220px] mt-[20px] 
-                  bg-kang-gray-900 rounded-xl transition
+                  bg-kang-gray rounded-xl transition
                   ${clickedIndex === index ? '-translate-y-[100px] scale-75' : ''}
                    `}>
                         <img src={item.img} alt={item.name} className="h-full w-full border-4 border-white rounded-xl" />
@@ -175,8 +175,8 @@ const ProyectsComponent = (props: IProyects) => {
                         ${clickedIndex === index ? ' -translate-y-[165px]': ''} 
                         `}>
                             <h1 className=" font-kang-invasion text-blue-600 text-2xl mb-4 text-nowrap">{item.name}</h1>
-                            <p className=" font-kang-pixels text-2xl text-white">{item.description}</p>
-                            <div className="flex text-white text-xl flex-row overflow-hidden gap-x-5 py-2 my-2">
+                            <p className=" font-kang-pixels text-2xl dark:text-white text-kang-gray">{item.description}</p>
+                            <div className="flex dark:text-white text-kang-gray text-xl flex-row overflow-hidden gap-x-5 py-2 my-2">
                                 {item.tecnologies.map(tech => (
                                     <div key={tech.key}>{tech.icon}</div>
                                 ))}

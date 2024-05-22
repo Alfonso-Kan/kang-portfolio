@@ -22,9 +22,9 @@ const ProfileComponent = (props: INavBarComponentProps) => {
         </div>
         {/* SECCIÓN DE LOS TITULOS */}
         <div className='flex flex-col justify-center md:items-start w-full px-2'>
-          <p className='text-6xl font-kang-pixels text-white'> Hola, mi nombre es: </p>
+          <p className='text-6xl font-kang-pixels dark:text-white text-kang-gray'> Hola, mi nombre es: </p>
           <h1 className='font-kang-cracked text-kang-red-900 py-5 text-3xl md:text-4xl lg:text-5xl whitespace-nowrap'>ALFONSO KANG</h1>
-          <div className='text-xl sm:text-2xl text-white font-kang-pixels  py-1xl'>
+          <div className='text-xl sm:text-2xl dark:text-white text-kang-gray font-kang-pixels  py-1xl'>
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
@@ -46,7 +46,9 @@ const ProfileComponent = (props: INavBarComponentProps) => {
 
           <a className='
           flex flex-row
-          font-kang-pixels text-white
+          font-kang-pixels
+        text-white
+          dark:bg-transparent bg-kang-gray
           items-center justify-center
           text-4xl text-nowrap
           py-2 px-6

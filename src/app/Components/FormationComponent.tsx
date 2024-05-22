@@ -87,7 +87,7 @@ const FormationComponent = (props: IFormationComponent) => {
     min-h-screen 
     items-center justify-center
     py-14 z-10 
-    bg-kang-gray-900`}>
+    `}>
       <div className={`flex items-center justify-center w-full`}>
         <div className="w-3/4 lg:w-full ">
           <Slider {...settings}>
@@ -106,16 +106,16 @@ const FormationComponent = (props: IFormationComponent) => {
         FormationList.map((form, index) => (
           <div key={form.key} className={`flex justify-center items-center w-full ${index === currentIndex ? '' : 'hidden'}`}>
             <div className="w-3/4 p-6 bg-kang-gray-900 border-none rounded-lg">
-              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-400 font-kang-invasion">{form.title}</h5>
+              <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-600 font-kang-invasion">{form.title}</h5>
               {/* tecos de las tecnologías */}
-              <div className='flex flex-row py-2 text-white text-3xl justify-start'>{form.tech.map((tech, index) => (
+              <div className='flex flex-row py-2 dark:text-white text-kang-gray text-3xl justify-start'>{form.tech.map((tech, index) => (
                 <div key={index} className='hover:text-blue-600 p-0 border-none my-5 mx-2 sm:mx-4'>
                   <ToolTip color='blue' content={tech.name} position={tech.position}>
                     {tech.icon}
                   </ToolTip>
                 </div>
               ))}</div>
-              <p className="mb-3 font-normal text-white text-2xl md:text-4xl font-kang-pixels leading-7">{form.description}</p>
+              <p className="mb-3 font-normal dark:text-white text-kang-gray text-2xl md:text-4xl font-kang-pixels leading-7">{form.description}</p>
               <a href={form.url} target='_blank' className="inline-flex font-medium items-center justify-around border-2 border-blue-600 py-1 px-2 text-blue-600 hover:bg-blue-600 rounded-xl hover:text-white">
                 <p className=' font-kang-invasion text-xl mr-2'>Ver mas</p> <FaExternalLinkAlt />
               </a>

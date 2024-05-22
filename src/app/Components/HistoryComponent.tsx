@@ -33,11 +33,11 @@ const HistoryComponent = (props: IHistoryComponent) => {
         {/* Enterprise name && position */}
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-4xl text-kang-red-900 font-kang-invasion">TekyLab</h1>
-          <h2 className="text-4xl text-white font-kang-pixels">Desarrollador entry-level</h2>
-          <h2 className="text-4xl text-white font-kang-pixels">Noviembre 2023 - Actualidad</h2>
+          <h2 className="text-4xl dark:text-white text-kang-gray font-kang-pixels">Desarrollador entry-level</h2>
+          <h2 className="text-4xl dark:text-white text-kang-gray font-kang-pixels">Noviembre 2023 - Actualidad</h2>
         </div>
         {/* Enterprise description */}
-        <p className="flex items-start leading-none lg:leading-tight jusitfy-center p-2 m-2 font-kang-pixels text-white text-2xl sm:text-3xl lg:text-4xl ">
+        <p className="flex items-start leading-none lg:leading-tight jusitfy-center p-2 m-2 font-kang-pixels dark:text-white text-kang-gray text-2xl sm:text-3xl lg:text-4xl ">
           Durante mi tiempo en Tekylab, he tenido el privilegio de formar parte de un equipo
           colaborativo y multidisciplinario dedicado al desarrollo de soluciones innovadoras.
           como miembro de este equipo, trabaje en una variedad de proyectos utilizando tecnologias de
@@ -50,7 +50,7 @@ const HistoryComponent = (props: IHistoryComponent) => {
         {/* Tecnologías  */}
         <div className="flex flex-row justify-start items-center gap-x-2 lg:gap-x-8 tex-xl sm:text-3xl py-12">
          {techList.map(tech=> (
-          <div key={tech.key} className="text-white hover:text-kang-red-900">
+          <div key={tech.key} className="dark:text-white text-kang-gray dark:hover:text-kang-red-900 hover:text-kang-red-900">
             <ToolTip color='red' content={tech.name} position={tech.position}>
             {tech.icon}
             </ToolTip>

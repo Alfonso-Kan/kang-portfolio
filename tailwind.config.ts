@@ -8,6 +8,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       gridTemplateAreas: {
@@ -35,10 +36,7 @@ const config: Config = {
         'kang-linkedin': '#0077B5',
         'kang-gmail': '#DB4437',
         'kang-whatsapp': '#25D366',
-        'kang-gray': {
-          300: '#d0d0d0',
-          900: '#231f20'
-        },
+        'kang-gray': '#231f20',
         'kang-red': {
           300: '#ff6666',
           900: '#bb4430'
@@ -51,14 +49,13 @@ const config: Config = {
           300: '#ffd699',
           900: '#f3dfa2'
         },
-        'kang-ivory': {
-          300: '#fffacd',
-          900: '#efe6dd'
-        }
+        'kang-white': '#aaaaaa'
       },
       boxShadow: {
-        myShadow1: '4.1px -5px 0 0 rgb(17, 24, 39)',
-        myShadow2: '-4.1px -5px 0 0 rgb(17, 24, 39)'
+        darkMyShadow1: '4.1px -5px 0 0 rgb(17, 24, 39)',
+        myShadow1: '4.1px -5px 0 0 rgb(170 170 170)',
+        darkMyShadow2: '-4.1px -5px 0 0 rgb(17, 24, 39)',
+        myShadow2: '-4.1px -5px 0 0 rgb(170 170 170)'
       }
     },
   },
