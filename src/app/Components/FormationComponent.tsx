@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Arrow } from './CustomArrows'
 import { ToolTip } from './CustomToolTip';
 import { FaHtml5, FaCss3, FaBootstrap, FaSass, FaReact, FaExternalLinkAlt } from "react-icons/fa";
-import { SiJavascript, SiRedux } from "react-icons/si";
+import { SiJavascript, SiRedux, SiCsharp, SiDotnet } from "react-icons/si";
 
 interface IFormationComponent {
   id?: string
@@ -65,6 +65,24 @@ const FormationComponent = (props: IFormationComponent) => {
       explorando nuevas tecnicas para proyectos mas complejos.
       `,
       url: 'https://freecodecamp.org/certification/ALFONSO_JESUS_KAN_SILVEIRA/front-end-development-libraries'
+    }, 
+    {
+      key: 4,
+      title: 'Fundational C# with Microsoft',
+      img: '/images/fourth-certification.png',
+      tech: [
+        {icon: <SiCsharp />, name: 'C#', position: 'bottom'} ,
+        {icon: <SiDotnet />, name: ".NET", position: 'top'}
+      ],
+      description: `
+      Aprendi los conceptos fundamentales de la programacion en C#, incluyendo variables,
+      tipos de datos, estructuras de control y principios de programacion orientada a objetos.
+      A traves de ejercicios practicos y proyectos, desarrolle habilidades para aplicar C# en el
+      desarrollo de software. Mejore mis capacidades para solucionar problemas y depurar aplicaciones
+      de consola en C#, identificando y corrigiendo errores en el codigo para asegurar un funcionamiento
+      optimo de las aplicaciones...
+      `,
+      url: 'https://www.freecodecamp.org/certification/ALFONSO_JESUS_KAN_SILVEIRA/foundational-c-sharp-with-microsoft'
     }
   ]
 
