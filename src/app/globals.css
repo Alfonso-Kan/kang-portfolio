@@ -7,8 +7,6 @@
   --kang-garnet: #611103;
 }
 
-
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
